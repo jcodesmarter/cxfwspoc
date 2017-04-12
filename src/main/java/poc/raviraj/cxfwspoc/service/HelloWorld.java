@@ -1,11 +1,9 @@
 package poc.raviraj.cxfwspoc.service;
 
-import javax.jws.WebMethod;
 import javax.jws.WebService;
 
-@WebService
+@WebService(name = "helloWorld")
 public interface HelloWorld {
 	
-	@WebMethod
 	public String sayHi(String name);
 }

@@ -3,7 +3,10 @@ package poc.raviraj.cxfwspoc.service;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 
-@WebService(endpointInterface = "poc.raviraj.cxfwspoc.service.HelloWorld", serviceName="helloworld")
+import org.springframework.stereotype.Service;
+
+@Service(value="helloWorld")
+@WebService(name = "helloWorld", endpointInterface = "poc.raviraj.cxfwspoc.service.HelloWorld", serviceName="helloworld", wsdlLocation = "wsdl/helloworld.wsdl")
 public class HelloWorldImpl implements HelloWorld {
 
 	public String sayHi(@WebParam(name = "name") String name) {

@@ -20,8 +20,9 @@ public class AppInitializer implements WebApplicationInitializer {
 		container.addListener(new ContextLoaderListener(context));
 		
 		//load on startup org.apache.cxf.transport.servlet.CXFServlet with url-pattern mapping /services/*
-		ServletRegistration.Dynamic dispatcher = container.addServlet("dispatcher", new CXFServlet());
-		dispatcher.addMapping("/services");
+		ServletRegistration.Dynamic webservice = container.addServlet("webservice", new CXFServlet());
+		webservice.addMapping("/services");
+		webservice.setLoadOnStartup(1);
 	}
 
 }
